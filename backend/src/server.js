@@ -5,9 +5,7 @@ const path = require('path');
 const routes = require('./routes');
 
 const app = express();
-//mongodb://oministack:Qw6bYO8G2uMzYRlX@omnistack-shard-00-00-r3vul.mongodb.net:27017,omnistack-shard-00-01-r3vul.mongodb.net:27017,omnistack-shard-00-02-r3vul.mongodb.net:27017/admin?ssl=true&replicaSet=omnistack-shard-0&authSource=admin&retryWrites=true&w=majority
-//mongoose.connect('mongodb+srv://oministack:@omnistack-r3vul.mongodb.net/admin?retryWrites=true&w=majority', {
-    mongoose.connect('mongodb+srv://oministack:Qw6bYO8G2uMzYRlX@omnistack-r3vul.mongodb.net/omnistack?retryWrites=true&w=majority', {
+    mongoose.connect('mongodb+srv://react-native:kxNlDA43uFxsXkpQ@omnistack-r3vul.mongodb.net/omnistack?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -25,4 +23,4 @@ app.use(express.json());
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(routes);
 
-app.listen(3333);
+app.listen(3333, '192.168.15.240');
